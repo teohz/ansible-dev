@@ -1,0 +1,9 @@
+---
+- name: download pi-hole (Bastion)
+  tags: bastion,pihole
+  get_url:
+    url: https://install.pi-hole.net
+    dest: /home/pi/pi-hole.sh
+    owner: pi
+    group: pi
+    mode: "0755"

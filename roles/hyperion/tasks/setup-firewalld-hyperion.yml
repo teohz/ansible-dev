@@ -1,0 +1,21 @@
+---
+- name: open relevant ports (Hyperion)
+  tags: hyperion,firewalld,firewall
+  firewalld:
+    zone: public
+    permanent: true
+    immediate: yes
+    state: enabled
+    rich_rule: "{{ item }}"
+  with_items:
+    - 'rule family="ipv4" port port="8090" protocol="tcp" accept'
+    - 'rule family="ipv4" port port="8090" protocol="udp" accept'
+    - 'rule family="ipv4" port port="9092" protocol="tcp" accept'
+    - 'rule family="ipv4" port port="9092" protocol="udp" accept'
+    - 'rule family="ipv4" port port="19333" protocol="tcp" accept'
+    - 'rule family="ipv4" port port="19333" protocol="udp" accept'
+    - 'rule family="ipv4" port port="19400" protocol="tcp" accept'
+    - 'rule family="ipv4" port port="19400" protocol="udp" accept'
+    - 'rule family="ipv4" port port="19444-19445" protocol="tcp" accept'
+    - 'rule family="ipv4" port port="19444-19445" protocol="udp" accept'
+  notify: reload firewall

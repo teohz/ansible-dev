@@ -1,0 +1,4 @@
+---
+# tasks file for jspc003
+
+- import_tasks: install-jspc003-apps.yml

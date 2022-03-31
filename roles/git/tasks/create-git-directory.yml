@@ -1,0 +1,9 @@
+---
+- name: create git directory (Git)
+  tags: git,dir,directory
+  file:
+    path: /home/git/srv
+    state: directory
+    owner: git
+    group: git
+    mode: 0700

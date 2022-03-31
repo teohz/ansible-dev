@@ -1,0 +1,21 @@
+---
+- name: open HTTP/S ports (Bastion)
+  tags: bastion,pihole,ufw
+  ufw:
+    rule: allow
+    port: "{{ item[0] }}"
+    src: "{{ item[1] }}"
+  with_nested:
+    - ["80", "443"]
+    - ["192.168.0.0/24", "10.0.0.0/24", "fd7e:bc9e:8275:e9cc::/64"]
+
+- name: open DNS port (Bastion)
+  tags: bastion,dns,pihole,ufw
+  ufw:
+    rule: allow
+    port: 53
+    src: "{{ item }}"
+  with_items:
+    - 192.168.0.0/24
+    - 10.0.0.0/24
+    - fd7e:bc9e:8275:e9cc::/64

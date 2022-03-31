@@ -1,0 +1,6 @@
+---
+# tasks file for git
+- import_tasks: create-git-user.yml
+- import_tasks: create-git-directory.yml
+- import_tasks: setup-keys-git.yml
+- import_tasks: install-git.yml

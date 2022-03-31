@@ -1,0 +1,28 @@
+---
+- name: setup sshd
+  tags: base,sshd
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.regex }}"
+    line: "{{ item.line }}"
+  with_items:
+    - {
+        regex: "(^# *)?PermitRootLogin (yes|no|prohibit-password)",
+        line: "PermitRootLogin no",
+      }
+    - {
+        regex: "(^# *)?PubkeyAuthentication (yes|no)",
+        line: "PubkeyAuthentication yes",
+      }
+    - {
+        regex: "(^# *)?PasswordAuthentication (yes|no)",
+        line: "PasswordAuthentication no",
+      }
+  register: sshd
+
+- name: restart sshd
+  tags: base,sshd
+  service:
+    name: sshd
+    state: restarted
+  when: sshd.changed

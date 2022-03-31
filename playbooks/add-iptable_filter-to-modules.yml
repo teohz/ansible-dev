@@ -1,0 +1,20 @@
+---
+
+- hosts: all
+  become: yes
+  tasks:
+
+  - name: add iptable_filter to modules (Debian)
+    tags: base,debian,ufw,iptables
+    lineinfile:
+      path: /etc/modules
+      regexp: '(^#*)?iptable_filter'
+      line: 'iptable_filter'
+    register: module
+    when: ansible_distribution in ["Debian", "Ubuntu"]
+
+  - name: try reboot (Debian)
+    tags: base,debian,ufw,iptables
+    reboot:
+    # when: ansible_distribution in ["Debian", "Ubuntu"] && module.changed
+    when: module.changed

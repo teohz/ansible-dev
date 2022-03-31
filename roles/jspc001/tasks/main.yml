@@ -1,0 +1,4 @@
+---
+# tasks file for jspc001
+
+- import_tasks: install-jspc001-apps.yml

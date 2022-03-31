@@ -1,0 +1,16 @@
+---
+- name: update repositiories (Debian)
+  tags: always
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  changed_when: false
+  when: ansible_distribution in ["Debian", "Ubuntu"]
+
+- name: update repositories (Arch)
+  tags: always
+  pacman:
+    update_cache: yes
+    cache_valid_time: 3600
+  changed_when: false
+  when: ansible_distribution in ["Arch Linux", "Manjaro"]

@@ -1,0 +1,5 @@
+---
+# tasks file for bastion
+- import_tasks: setup-keys-bastion.yml
+- import_tasks: setup-firewalld-bastion.yml
+- import_tasks: get-pihole.yml

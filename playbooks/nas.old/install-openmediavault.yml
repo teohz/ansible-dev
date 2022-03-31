@@ -1,0 +1,28 @@
+---
+
+- name: open HTTP/S port (NAS)
+  tags: ufw,nas
+  ufw:
+    rule: allow
+    proto: tcp
+    port: '{{ item[0] }}'
+    src: '{{ item[1] }}'
+  with_nested:
+    - [ 'http', 'https' ]
+    - [ '192.168.0.0/24', '10.0.0.0/24', 'fd7e:bc9e:8275:e9cc::/64' ]
+
+- name: download openmediavault (NAS)
+  tags: nas,openmediavault
+  get_url:
+    url: https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install
+    dest: /home/pi/openmediavault.sh
+    owner: pi
+    group: pi
+    mode: '0755'
+
+- name: add user pi to ssh group (NAS)
+  tags: nas,openmediavault
+  user:
+    name: pi
+    groups: ssh
+    append: yes

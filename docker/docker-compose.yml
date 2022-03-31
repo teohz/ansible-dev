@@ -1,0 +1,43 @@
+---
+
+version: "3.7"
+
+services:
+  core:
+    image: manjaro-ansible-dev
+    command: tail -F anything
+    ports:
+      - 2022:2022
+    working_dir: /root
+    volumes:
+      - core-data:/root
+  h1:
+    image: manjaro-ansible-dev
+    command: tail -F anything
+    ports:
+      - 3022:3022
+    working_dir: /root
+    volumes:
+      - h1-data:/root
+  h2:
+    image: manjaro-ansible-dev
+    command: tail -F anything
+    ports:
+      - 4022:4022
+    working_dir: /root
+    volumes:
+      - h2-data:/root
+  h3:
+    image: manjaro-ansible-dev
+    command: tail -F anything
+    ports:
+      - 5022:5022
+    working_dir: /root
+    volumes:
+      - h3-data:/root
+
+volumes:
+  core-data:
+  h1-data:
+  h2-data:
+  h3-data:

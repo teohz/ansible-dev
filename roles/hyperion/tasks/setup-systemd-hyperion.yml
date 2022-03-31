@@ -1,0 +1,14 @@
+---
+- name: disable hyperion@pi (Hyperion)
+  tags: hyperion,systemd
+  systemd:
+    name: hyperion@pi
+    state: stopped
+    enabled: no
+
+- name: enable hyperion@root (Hyperion)
+  tags: hyperion,systemd
+  systemd:
+    name: hyperion@root
+    state: started
+    enabled: yes

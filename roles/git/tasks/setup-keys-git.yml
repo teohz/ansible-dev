@@ -1,0 +1,6 @@
+---
+- name: add ssh keys for access (Git)
+  tags: git,ssh,keys
+  authorized_key:
+    user: git
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHTLKZ+gBU3w3bLoACv/hEQkO3z5p62Y3Fn2fvJH0eTG git"

@@ -1,0 +1,9 @@
+---
+- name: reboot system
+  tags: reboot
+  hosts: all
+  become: yes
+  gather_facts: False
+  tasks:
+    - name: reboot now
+      reboot:

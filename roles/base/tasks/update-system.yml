@@ -1,0 +1,14 @@
+---
+- name: install updates (Debian)
+  tags: always
+  apt:
+    upgrade: full
+    update_cache: no
+  when: ansible_distribution in ["Debian", "Ubuntu"]
+
+- name: install updates (Manjaro)
+  tags: always
+  pacman:
+    upgrade: yes
+    update_cache: no
+  when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro"]

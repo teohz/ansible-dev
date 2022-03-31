@@ -1,0 +1,9 @@
+---
+- name: ensure git user is created (Git)
+  tags: git,account,user
+  user:
+    name: git
+    comment: Git user
+    shell: /bin/bash
+    password_lock: yes
+    uid: 1111

@@ -1,0 +1,6 @@
+---
+- name: add ssh keys for access (Hyperion)
+  tags: hyperion,ssh,keys
+  authorized_key:
+    user: pi
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN2n1T51SCvxq1tZa7/Pz2lb8zu5s/bG7PPcE/WPFWtT Hyperion-access-coRe"

@@ -1,0 +1,54 @@
+---
+- name: install python + pip + ansible (repo)
+  tags: base,core,python,ansible
+  package:
+    name:
+      - "{{ python }}"
+      - "{{ pip }}"
+      - ansible
+    state: latest
+
+- name: install firewalld
+  tags: base,core,firewalld,firewall
+  package:
+    name:
+      - nftables
+      - firewalld
+    state: latest
+
+- name: remove ufw
+  tags: base,core,ufw
+  package:
+    name:
+      - ufw
+      # - iptables
+    state: absent
+
+- name: install remaining packages
+  tags: base,core,mosh,screen,wireguard,wormhole,magic-wormhole,mdns,avahi
+  package:
+    name:
+      - git
+      - mosh
+      - screen
+      - wireguard-tools
+      - magic-wormhole
+      - "{{ mdns }}"
+      - "{{ avahi }}"
+    state: latest
+
+- name: install wireguard (Debian)
+  tags: wireguard
+  package:
+    name:
+      - wireguard
+    state: latest
+  when: ansible_distribution in ["Debian", "Ubuntu"]
+
+- name: install cronie (Arch)
+  tags: cron,cronie
+  package:
+    name:
+      - cronie
+    state: latest
+  when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro"]

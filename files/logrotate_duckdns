@@ -1,0 +1,10 @@
+/var/log/duckdns/*.log {
+  rotate 14
+  daily
+  compress
+  delaycompress
+  missingok
+  notifempty
+  copytruncate
+  dateext
+}

@@ -1,0 +1,8 @@
+---
+- name: create ansible cron job (ansible-pull)
+  tags: base,core,cron,ansible
+  cron:
+    user: ansible
+    name: "ansible-pull"
+    minute: "*/30"
+    job: "/usr/bin/ansible-pull -o -U https://github.com/teohz/ansible-dev.git >> /var/log/ansible/ansible.log"

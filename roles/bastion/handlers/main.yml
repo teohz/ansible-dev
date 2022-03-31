@@ -1,0 +1,7 @@
+---
+# handlers file for bastion
+- name: reload firewall
+  tags: base,firewalld,firewall,ssh,mosh
+  service:
+    name: firewalld
+    state: reloaded

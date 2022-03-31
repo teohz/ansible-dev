@@ -1,0 +1,7 @@
+---
+- name: set iptables-legacy as active (Debian)
+  tags: base,iptables,ufw
+  alternatives:
+    name: iptables
+    path: /usr/sbin/iptables-legacy
+  when: ansible_distribution in ["Debian", "Ubuntu"]

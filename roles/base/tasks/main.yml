@@ -1,0 +1,11 @@
+---
+# tasks file for base
+- import_tasks: update-system.yml
+- import_tasks: locale-gen.yml
+- import_tasks: setup-sshd-base.yml
+- import_tasks: install-core-tools.yml
+- import_tasks: create-ansible-user.yml
+- import_tasks: create-ansible-cron.yml
+- import_tasks: setup-firewalld-base.yml
+- import_tasks: setup-firewalld-external-base.yml
+- import_tasks: setup-ansible-logs.yml

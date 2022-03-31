@@ -1,0 +1,7 @@
+---
+# handlers file for base
+- name: reload firewall
+  tags: base,firewalld,firewall,ssh,mosh
+  service:
+    name: firewalld
+    state: reloaded

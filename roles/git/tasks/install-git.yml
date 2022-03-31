@@ -1,0 +1,5 @@
+---
+- name: install git (Git)
+  tags: git,install
+  package:
+    name: "{{ git }}"

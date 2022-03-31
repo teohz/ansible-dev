@@ -1,0 +1,21 @@
+---
+- name: import public key from Hyperion (Hyperion)
+  tags: hyperion,ambilight
+  apt_key:
+    url: https://apt.hyperion-project.org/hyperion.pub.key
+    state: present
+    keyring: /usr/share/keyrings/hyperion.pub.gpg
+
+- name: add Hyperion sources (Hyperion)
+  tags: hyperion,ambilight
+  apt_repository:
+    # repo: "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ $(lsb_release -cs) main"
+    repo: "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ bullseye main"
+    state: present
+    filename: hyperion
+
+- name: install Hyperion (Hyperion)
+  tags: hyperion,ambilight
+  apt:
+    name: hyperion
+    update_cache: yes

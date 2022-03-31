@@ -1,0 +1,7 @@
+---
+- name: install jspc003 apps
+  tags: jspc003
+  package:
+    name:
+      - "{{ onlyoffice }}"
+    state: latest

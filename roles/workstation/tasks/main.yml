@@ -1,0 +1,6 @@
+---
+# tasks file for workstation
+- import_tasks: locale-gen.yml
+- import_tasks: setup-keys-workstation.yml
+- import_tasks: install-workstation-apps.yml
+- import_tasks: setup-ddns.yml

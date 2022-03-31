@@ -1,0 +1,74 @@
+---
+- hosts: all
+  become: true
+  connection: local
+  pre_tasks:
+    - name: update repositiories (Debian)
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      changed_when: false
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+
+    - name: update repositories (Arch)
+      pacman:
+        update_cache: yes
+        cache_valid_time: 3600
+      changed_when: false
+      when: ansible_distribution in ["Arch Linux", "Manjaro"]
+
+- hosts: all
+  become: true
+  connection: local
+  gather_facts: false
+  roles:
+    - base
+
+- hosts: bastions
+  become: true
+  connection: local
+  gather_facts: false
+  roles:
+    - bastion
+
+- hosts: hyperions
+  become: true
+  connection: local
+  gather_facts: false
+  roles:
+    - hyperion
+
+- hosts: gits
+  become: true
+  connection: local
+  gather_facts: false
+  roles:
+    - git
+
+- hosts: workstations
+  become: true
+  connection: local
+  gather_facts: false
+  roles:
+    - workstation
+
+- hosts: jspc001
+  tags: jspc001
+  become: true
+  gather_facts: false
+  roles:
+    - jspc001
+
+- hosts: jspc002
+  tags: jspc002
+  become: true
+  gather_facts: false
+  roles:
+    - jspc002
+
+- hosts: jspc003
+  tags: jspc003
+  become: true
+  gather_facts: false
+  roles:
+    - jspc003

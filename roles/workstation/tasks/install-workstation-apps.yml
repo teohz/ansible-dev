@@ -1,0 +1,8 @@
+---
+- name: install workstation apps
+  tags: workstation
+  package:
+    name:
+      - "{{ firefox }}"
+      - "{{ chromium }}"
+    state: latest

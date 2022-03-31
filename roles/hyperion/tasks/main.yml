@@ -1,0 +1,6 @@
+---
+# tasks file for hyperion
+- import_tasks: setup-keys-hyperion.yml
+- import_tasks: setup-firewalld-hyperion.yml
+- import_tasks: install-hyperion.yml
+- import_tasks: setup-systemd-hyperion.yml

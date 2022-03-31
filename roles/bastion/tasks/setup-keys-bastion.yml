@@ -1,0 +1,6 @@
+---
+- name: add ssh keys for access (Bastion)
+  tags: bastion,ssh,keys
+  authorized_key:
+    user: pi
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILu//7+6aTrAM54mvJqIPpe42Cap8O1ekhO5llKlq+Ac Bastion-access-coRe"

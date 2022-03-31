@@ -1,0 +1,21 @@
+---
+- name: enable firewalld
+  tags: base,firewalld,firewall
+  service:
+    name: firewalld
+    state: started
+
+- name: allow ssh + mosh (internal)
+  tags: base,firewalld,firewall,ssh,mosh
+  firewalld:
+    zone: public
+    permanent: true
+    immediate: yes
+    state: enabled
+    rich_rule: "{{ item }}"
+  with_items:
+    - 'rule family="ipv4" source address="192.168.0.0/24" accept'
+    - 'rule family="ipv4" source address="10.0.0.0/24" accept'
+    - 'rule family="ipv4" port port="22" protocol="tcp" accept'
+    - 'rule family="ipv4" port port="6000-61000" protocol="udp" accept'
+  notify: reload firewall

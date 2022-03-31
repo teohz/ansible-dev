@@ -1,0 +1,36 @@
+---
+- name: enable ufw
+  tags: base,ufw
+  ufw:
+    state: enabled
+
+- name: set default policies
+  tags: base,ufw
+  ufw:
+    policy: "{{ item.policy }}"
+    direction: "{{ item.direction }}"
+  with_items:
+    - { policy: "allow", direction: "outgoing" }
+    - { policy: "deny", direction: "incoming" }
+
+- name: limit local ssh access
+  tags: base,ufw,ssh
+  ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+    src: "{{ item }}"
+  with_items:
+    - 192.168.0.0/24
+    - 10.0.0.0/24
+
+- name: allow local mosh access
+  tags: base,ufw,mosh
+  ufw:
+    rule: allow
+    port: "60000:61000"
+    proto: udp
+    src: "{{ item }}"
+  with_items:
+    - 192.168.0.0/24
+    - 10.0.0.0/24
