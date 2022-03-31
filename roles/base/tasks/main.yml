@@ -6,6 +6,6 @@
 - import_tasks: install-core-tools.yml
 - import_tasks: create-ansible-user.yml
 - import_tasks: create-ansible-cron.yml
+- import_tasks: setup-ansible-logs.yml
 - import_tasks: setup-firewalld-base.yml
 - import_tasks: setup-firewalld-external-base.yml
-- import_tasks: setup-ansible-logs.yml
