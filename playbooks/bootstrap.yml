@@ -1,0 +1,43 @@
+---
+- name: bootstrap
+  tags: ansible
+  hosts: all
+  become: yes
+  gather_facts: False
+  tasks:
+    - name: create ansible user
+      tags: ansible
+      user:
+        name: ansible
+        system: yes
+
+    - name: copy the vault key
+      tags: vault
+      copy:
+        src: ~/.vault_key
+        dest: /home/ansible/.vault_key
+        mode: 0600
+        owner: ansible
+        group: ansible
+
+    - name: copy sudoers_ansible
+      tags: always
+      copy:
+        src: files/sudoers_ansible
+        dest: /etc/sudoers.d/ansible
+        owner: root
+        group: root
+        mode: 0440
+
+    - name: create .ssh dir if it doesn't exist
+      tags: always
+      file:
+        path: /home/ansible/.ssh
+        state: directory
+        mode: "0700"
+
+    - name: add ssh keys for access
+      tags: always
+      authorized_key:
+        user: ansible
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFDCQUSwXVYUn0x4dfrBYQxeYbAi94LZiYTGTzUhitDP Ansible-management"
