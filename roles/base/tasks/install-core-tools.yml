@@ -28,6 +28,7 @@
   tags: base,core,mosh,screen,wireguard,wormhole,magic-wormhole,mdns,avahi
   package:
     name:
+      - vim
       - git
       - mosh
       - screen
