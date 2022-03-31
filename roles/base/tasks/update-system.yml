@@ -6,7 +6,7 @@
     update_cache: no
   when: ansible_distribution in ["Debian", "Ubuntu"]
 
-- name: install updates (Manjaro)
+- name: install updates (Arch)
   tags: always
   pacman:
     upgrade: yes
