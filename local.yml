@@ -15,7 +15,7 @@
         update_cache: yes
         cache_valid_time: 3600
       changed_when: false
-      when: ansible_distribution in ["Arch Linux", "Manjaro"]
+      when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro"]
 
 - hosts: all
   become: true
