@@ -20,6 +20,7 @@
   tags: base,core,ufw
   package:
     name:
+      - gufw
       - ufw
       # - iptables
     state: absent
