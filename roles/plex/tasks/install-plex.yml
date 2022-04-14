@@ -1,0 +1,27 @@
+---
+- name: install apt-transport-https (Plex)
+  tags: plex,apt
+  apt:
+    name: apt-trainsport-https
+    update_cache: no
+
+- name: import public key from Plex (Plex)
+  tags: plex,apt
+  apt_key:
+    url: https://downloads.plex.tv/plex-keys/PlexSign.key
+    state: present
+    keyring: /usr/share/keyrings/plex.pub.gpg
+
+- name: add Plex sources (Plex)
+  tags: plex,apt
+  apt_repository:
+    # repo: "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ $(lsb_release -cs) main"
+    repo: "deb [signed-by=/usr/share/keyrings/plex.pub.gpg] https://downloads.plex.tv/repo/deb public main"
+    state: present
+    filename: plex
+
+- name: install Plex (Plex)
+  tags: plex
+  apt:
+    name: plexmediaserver
+    update_cache: yes

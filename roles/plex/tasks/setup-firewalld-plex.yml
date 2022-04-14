@@ -1,0 +1,12 @@
+---
+- name: open relevant ports (Ples)
+  tags: plex,firewalld,firewall
+  firewalld:
+    zone: public
+    permanent: true
+    immediate: yes
+    state: enabled
+    rich_rule: "{{ item }}"
+  with_items:
+    - 'rule family="ipv4" port port="32400" protocol="tcp" accept'
+  notify: reload firewall

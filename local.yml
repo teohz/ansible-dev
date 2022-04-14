@@ -44,6 +44,13 @@
   roles:
     - git
 
+- hosts: plex
+  tags: plex,media
+  become: true
+  gather_facts: false
+  roles:
+    - plex
+
 - hosts: workstations
   become: true
   connection: local

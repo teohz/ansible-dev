@@ -5,40 +5,42 @@ jspc002
 jspc003
 manjaro-dev-1
 zero-dev-1
-zero2-dev-1
 zero2-dev-2
 zero2-dev-3
 zero2-dev-4
 zero2-git
-
-[pi]
-bastion
-hyperion
-zero-dev-1
-zero2-dev-1
-zero2-dev-2
-zero2-git
+zero2-plex
 
 [bastions]
 bastion
 
+[dev]
+zero-dev-1
+zero2-dev-2
+zero2-dev-3
+zero2-dev-4
+
 [dns]
 bastion
+
+[gits]
+zero2-git
 
 [hyperions]
 hyperion
 
 [nas]
 
-[gits]
-zero2-git
-
-[dev]
+[pi]
+bastion
+hyperion
 zero-dev-1
-zero2-dev-1
 zero2-dev-2
-zero2-dev-3
-zero2-dev-4
+zero2-git
+zero2-plex
+
+[plex]
+zero2-plex
 
 [workstations]
 jspc001

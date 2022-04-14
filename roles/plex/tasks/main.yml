@@ -1,0 +1,4 @@
+---
+# tasks file for plex
+- import_tasks: setup-firewalld-plex.yml
+- import_tasks: install-plex.yml
