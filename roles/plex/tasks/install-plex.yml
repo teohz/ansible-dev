@@ -2,7 +2,7 @@
 - name: install apt-transport-https (Plex)
   tags: plex,apt
   apt:
-    name: apt-trainsport-https
+    name: apt-transport-https
     update_cache: no
 
 - name: import public key from Plex (Plex)
