@@ -35,6 +35,7 @@
       - screen
       - wireguard-tools
       - magic-wormhole
+      - lbzip2
       - "{{ mdns }}"
       - "{{ avahi }}"
     state: latest
