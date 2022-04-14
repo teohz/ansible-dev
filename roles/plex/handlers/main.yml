@@ -1,2 +1,7 @@
 ---
-# handlers file for plex
+# handlers file for base
+- name: reload firewall
+  tags: plex,firewalld,firewall,ssh,mosh
+  service:
+    name: firewalld
+    state: reloaded
