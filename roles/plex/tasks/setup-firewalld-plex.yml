@@ -1,5 +1,5 @@
 ---
-- name: open relevant ports (Ples)
+- name: open relevant ports (Plex)
   tags: plex,firewalld,firewall
   firewalld:
     zone: public

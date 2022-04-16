@@ -5,6 +5,7 @@
     name:
       - apt-transport-https
       - qnapi
+      - file
     update_cache: no
 
 - name: import public key from Plex (Plex)

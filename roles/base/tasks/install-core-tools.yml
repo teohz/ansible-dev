@@ -36,6 +36,7 @@
       - wireguard-tools
       - magic-wormhole
       - lbzip2
+      - detox
       - "{{ mdns }}"
       - "{{ avahi }}"
     state: latest
