@@ -80,3 +80,10 @@
   gather_facts: false
   roles:
     - jspc003
+
+- hosts: jfpc001
+  tags: jfpc001
+  become: true
+  gather_facts: false
+  roles:
+    - jfpc001

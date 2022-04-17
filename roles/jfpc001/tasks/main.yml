@@ -1,0 +1,3 @@
+---
+# tasks file for jfpc001
+- import_tasks: install-jfpc001-apps.yml
