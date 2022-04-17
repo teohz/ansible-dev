@@ -37,6 +37,7 @@
       - magic-wormhole
       - lbzip2
       - detox
+      - file
       - "{{ mdns }}"
       - "{{ avahi }}"
     state: latest
