@@ -3,3 +3,4 @@
   locale_gen:
     name: pl_PL.UTF-8
     state: present
+  when: ansible_distribution not in ["Arch Linux", "Archlinux", "Manjaro", "Debian", "Ubuntu"]
