@@ -3,5 +3,5 @@
   tags: jspc001
   package:
     name:
-      - "{{ onlyoffice }}"
+      - "{{ office }}"
     state: latest

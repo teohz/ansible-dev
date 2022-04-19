@@ -1,6 +1,7 @@
 ---
-python: python3
-pip: python3-pip
-mdns: libnss-mdns
 avahi: avahi-daemon
 git: git
+mdns: libnss-mdns
+pip: python3-pip
+python: python3
+vim: vim

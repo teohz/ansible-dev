@@ -12,3 +12,11 @@
     upgrade: yes
     update_cache: no
   when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro"]
+
+- name: install updates (Fedora)
+  tags: always
+  dnf:
+    name: "*"
+    update_cache: no
+    state: latest
+  when: ansible_distribution in ["Fedora"]

@@ -29,7 +29,7 @@
   tags: base,core,mosh,screen,wireguard,wormhole,magic-wormhole,mdns,avahi
   package:
     name:
-      - vim
+      - "{{ vim }}"
       - git
       - mosh
       - screen
@@ -50,10 +50,10 @@
     state: latest
   when: ansible_distribution in ["Debian", "Ubuntu"]
 
-- name: install cronie (Arch)
+- name: install cronie (Arch/Fedora)
   tags: cron,cronie
   package:
     name:
       - cronie
     state: latest
-  when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro"]
+  when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro", "Fedora"]

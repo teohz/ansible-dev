@@ -1,8 +1,10 @@
 ---
-python: python
-pip: python-pip
-mdns: nss-mdns
 avahi: avahi
-onlyoffice: onlyoffice-desktopeditors
-firefox: firefox
 chromium: chromium
+firefox: firefox
+mdns: nss-mdns
+office: libreoffice
+onlyoffice: onlyoffice-desktopeditors
+pip: python-pip
+python: python
+vim: vim-minimal

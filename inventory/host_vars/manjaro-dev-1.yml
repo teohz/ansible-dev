@@ -1,5 +1,6 @@
 ---
-python: python3
-pip: python-pip
-mdns: nss-mdns
 avahi: avahi
+mdns: nss-mdns
+pip: python-pip
+python: python3
+vim: vim

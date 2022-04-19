@@ -11,6 +11,12 @@
   tags: always
   pacman:
     update_cache: yes
-    cache_valid_time: 3600
   changed_when: false
   when: ansible_distribution in ["Arch Linux", "Archlinux", "Manjaro"]
+
+- name: update repositories (Fedora)
+  tags: always
+  dnf:
+    update_cache: yes
+  changed_when: false
+  when: ansible_distribution in ["Fedora"]
