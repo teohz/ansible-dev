@@ -3,4 +3,4 @@
   locale_gen:
     name: pl_PL.UTF-8
     state: present
-  when: ansible_distribution not in ["Fedora"]
+  when: ansible_distribution != "Fedora"
