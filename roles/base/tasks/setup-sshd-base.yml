@@ -20,9 +20,8 @@
       }
   register: sshd
 
-- name: restart sshd
+- name: start sshd
   tags: base,sshd
   service:
     name: sshd
-    state: restarted
-  when: sshd.changed
+    state: started
