@@ -25,35 +25,35 @@
   roles:
     - base
 
-- hosts: bastions
-  tags: bastion,bastions
+- hosts: bastion_hosts
+  tags: bastion
   become: true
   gather_facts: false
   roles:
     - bastion
 
-- hosts: hyperions
-  tags: hyperion,hyperions
+- hosts: hyperion_hosts
+  tags: hyperion
   become: true
   gather_facts: false
   roles:
     - hyperion
 
-- hosts: gits
-  tags: git,gits
+- hosts: git_hosts
+  tags: git
   become: true
   gather_facts: false
   roles:
     - git
 
-- hosts: plex
+- hosts: plex_hosts
   tags: plex,media
   become: true
   gather_facts: false
   roles:
     - plex
 
-- hosts: workstations
+- hosts: workstation_hosts
   tags: worksation,workstations
   become: true
   gather_facts: false

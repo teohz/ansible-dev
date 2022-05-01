@@ -12,27 +12,27 @@ zero2-dev-4
 zero2-git
 zero2-plex
 
-[bastions]
+[bastion_hosts]
 bastion
 
-[dev]
+[dev_hosts]
 zero-dev-1
 zero2-dev-2
 zero2-dev-3
 zero2-dev-4
 
-[dns]
+[dns_hosts]
 bastion
 
-[gits]
+[git_hosts]
 zero2-git
 
-[hyperions]
+[hyperion_hosts]
 hyperion
 
-[nas]
+[nas_hosts]
 
-[pi]
+[pi_hosts]
 bastion
 hyperion
 zero-dev-1
@@ -40,11 +40,11 @@ zero2-dev-2
 zero2-git
 zero2-plex
 
-[plex]
+[plex_hosts]
 plex
 zero2-plex
 
-[workstations]
+[workstation_hosts]
 jspc001
 jspc002
 jspc003

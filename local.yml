@@ -23,35 +23,34 @@
   roles:
     - base
 
-- hosts: bastions
+- hosts: bastion_hosts
   become: true
   connection: local
   gather_facts: false
   roles:
     - bastion
 
-- hosts: hyperions
+- hosts: hyperion_hosts
   become: true
   connection: local
   gather_facts: false
   roles:
     - hyperion
 
-- hosts: gits
+- hosts: git_hosts
   become: true
   connection: local
   gather_facts: false
   roles:
     - git
 
-- hosts: plex
-  tags: plex,media
+- hosts: plex_hosts
   become: true
   gather_facts: false
   roles:
     - plex
 
-- hosts: workstations
+- hosts: workstation_hosts
   become: true
   connection: local
   gather_facts: false
