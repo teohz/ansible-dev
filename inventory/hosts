@@ -1,4 +1,5 @@
 bastion
+bastion-new
 hyperion
 jspc001
 jspc002
@@ -14,6 +15,12 @@ zero2-plex
 
 [bastion_hosts]
 bastion
+
+[bastion-new-hosts]
+bastion-new
+
+[docker-hosts]
+bastion-new
 
 [dev_hosts]
 zero-dev-1

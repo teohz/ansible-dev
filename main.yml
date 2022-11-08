@@ -32,6 +32,13 @@
   roles:
     - bastion
 
+- hosts: bastion-new-hosts
+  tags: bastion-new
+  become: true
+  gather_facts: false
+  roles:
+    - bastion-new
+
 - hosts: hyperion_hosts
   tags: hyperion
   become: true
@@ -60,29 +67,29 @@
   roles:
     - workstation
 
-- hosts: jspc001
-  tags: jspc001
+- hosts: jspc*
+  tags: jspc
   become: true
   gather_facts: false
   roles:
     - jspc001
 
-- hosts: jspc002
-  tags: jspc002
-  become: true
-  gather_facts: false
-  roles:
-    - jspc002
+#- hosts: jspc002
+  #tags: jspc002
+  #become: true
+  #gather_facts: false
+  #roles:
+    #- jspc002
 
-- hosts: jspc003
-  tags: jspc003
-  become: true
-  gather_facts: false
-  roles:
-    - jspc003
+#- hosts: jspc003
+  #tags: jspc003
+  #become: true
+  #gather_facts: false
+  #roles:
+    #- jspc003
 
-- hosts: jfpc001
-  tags: jfpc001
+- hosts: jfpc*
+  tags: jfpc
   become: true
   gather_facts: false
   roles:
